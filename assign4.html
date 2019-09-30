@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Books shop</title>
+  
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <title>Book Shop</title>
+  </head>
+  <body>
+   <div class="container-fluid" style="margin-top:5%;margin-left: 10pt">
+    <div class="row ">
+        <div class="col-sm-4">
+                <div class="tab tab-2">
+                        Sr. no :<input type="text" name="fname" id="fname"><br/><br/>
+                        Product :<input type="text" name="Pname" id="Pname"><br/><br/>
+                        Unit Price :<input type="text" name="Price" id="Price"><br/><br/>
+                        Quantity :<input type="text" name="Qprice" id="Qprice"><br/><br/>
+            
+                        <button class="btn btn-primary" onclick="addHtmlTable()">Add To Cart</button>
+                        
+                    </div>  
+            
+            </div>
+                
+                <div class="col-sm-8">
+                        <div class="tab tab-1">
+                                <table id="table" border="5">
+                    
+                                    <tr>
+                                        <th> Sr. no </th>
+                    
+                                        <th> Product </th>
+                                        <th> Unit Price </th>
+                                        <th> Total Price</th>
+                                        </tr>
+                                    </table>
+
+                         </div>
+
+
+                        </div>
+             </div>  
+
+     </div>
+
+     <script>
+            function addHtmlTable() {
+                var table = document.getElementById("table"),
+    
+                    newRow = table.insertRow(-1),
+    
+                    cell1 = newRow.insertCell(0),
+                    cell2 = newRow.insertCell(1),
+                    cell3 = newRow.insertCell(2),
+                    cell4 = newRow.insertCell(3),
+    
+                fname = document.getElementById("fname").value;
+                Pname = document.getElementById("Pname").value;
+                Price = document.getElementById("Price").value;
+                Qprice = document.getElementById("Qprice").value;
+    
+                var tcost = parseInt(Price) * parseInt(Qprice);
+                console.log(tcost);
+    
+                cell1.innerHTML = fname;
+                cell2.innerHTML = Pname;
+                cell3.innerHTML = Price;
+                cell4.innerHTML = tcost;
+    
+            }
+            
+
+    
+    
+    
+        </script>
+   
+   
+   
+   
+   
+   
+   
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+    
+</body>
+</html>
